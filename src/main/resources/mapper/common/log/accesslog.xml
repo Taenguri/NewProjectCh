@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ACC_LOG">
+    <insert id="INSERT_MANAGER_ACCESS_LOG" parameterType="map">
+        /* 사용자 접속로그 입력 */
+        INSERT INTO BARO_MANAGER_ACC_LOG_TBL(MANAGER_ACC_LOG_KEY, ACCESS_IP, ACCESS_ID, ACCESS_AUTH, ACCESS_AGENT,
+                                             ACCESS_PASS_YN, ACCESS_FAIL_REASON, ACCESS_MANAGER_TYPE)
+        VALUES(BARO_LOG_SEQ.NEXTVAL, #{access_ip}, #{access_id}, #{access_auth, jdbcType=VARCHAR}, #{access_agent, jdbcType=VARCHAR},
+               #{access_pass_yn, jdbcType=VARCHAR}, #{access_fail_reason, jdbcType=VARCHAR}, #{access_manager_type, jdbcType=VARCHAR})
+    </insert>
+
+    <insert id="INSERT_USER_INFO_ACCESS_LOG_LAS" parameterType="map">
+        /* 이용자정보 접속로그 입력(LAS) */
+        INSERT INTO ${las_db_name}.CO_LOAN_USER_READ_TBL(REC_KEY, WORKER_IP, WORKER_ID, WORKER_NAME, WORKER_SYS,
+                                                         USER_KEY, WORK_DATE, FIRST_WORK)
+        VALUES(${las_db_name}.ESL_SEQ.NEXTVAL, #{worker_ip, jdbcType=VARCHAR}, #{worker_id, jdbcType=VARCHAR}, #{worker_name, jdbcType=VARCHAR}, #{worker_sys, jdbcType=VARCHAR},
+               (SELECT CU.REC_KEY FROM ${las_db_name}.CO_LOAN_USER_TBL CU WHERE CU.USER_ID = #{user_id}), SYSDATE, #{first_work, jdbcType=VARCHAR})
+    </insert>
+</mapper>

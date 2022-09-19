@@ -1,0 +1,59 @@
+spring:
+  datasource:
+    hikari:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+      jdbc-url: jdbc:oracle:thin:@172.16.31.14:1521:SWTEAM11G
+      username: kdotrobotcms
+      password: kdotrobotcms
+      maximum-pool-size: 10
+      connection-timeout: 10000
+      connection-test-query: SELECT 1 FROM DUAL
+      auto-commit: false
+      max-lifetime: 30000
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+  mvc:
+    contentnegotiation:
+      favor-parameter: true
+      media-types:
+        xlxs: application/vnd.ms-excel
+    view:
+      prefix: /WEB-INF/views
+      suffix: .jsp
+
+  devtools:
+    livereload:
+      enabled: true
+
+mybatis:
+  mapper-locations: classpath:mapper/**/**.xml
+
+# ADD DB SETTING
+database:
+  user-name: KOLAS
+  date-format: "'YYYY.MM.DD'"
+
+server:
+  port: 8443
+  servlet:
+    context-path: /
+  ssl:
+    enabled: true
+    key-store: .keystore
+    key-store-password: cucon#321
+
+# FILE
+file:
+  upload:
+    attach-path: D:/robotCMS/upload/board/attach/
+    image-path: resources/upload/board/images/
+
+#http
+http:
+  port: 8080
+https:
+  port: 8443

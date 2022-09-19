@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+    <definition name="default" template="/WEB-INF/views/layouts/layouts-tiles.jsp">
+        <put-attribute name="header" value="/WEB-INF/views/layouts/header.jsp" />
+        <put-attribute name="content" value="" />
+        <!--<put-attribute name="footer" value="/WEB-INF/views/layouts/footer.jsp" />-->
+    </definition>
+
+    <definition name="/*/*/*/*/*.kdot" extends="default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}/{4}/{5}.jsp" />
+    </definition>
+    <definition name="/*/*/*/*.kdot" extends="default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    <definition name="/*/*/*.kdot" extends="default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+    </definition>
+    <definition name="/*/*.kdot" extends="default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    <definition name="/*.kdot" extends="default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+    <definition name="*.kdot" extends="default">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+
+    <definition name="robot" template="/WEB-INF/views/layouts/robot-tiles.jsp" >
+        <put-attribute name="header" value="/WEB-INF/views/layouts/header-robot.jsp" />
+        <put-attribute name="content" value="" />
+    </definition>
+
+    <definition name="/*/*/*/*/*.robot" extends="robot">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}/{4}/{5}.jsp" />
+    </definition>
+    <definition name="/*/*/*/*.robot" extends="robot">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    <definition name="/*/*/*.robot" extends="robot">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+    </definition>
+    <definition name="/*/*.robot" extends="robot">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    <definition name="/*.robot" extends="robot">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+    <definition name="*.robot" extends="robot">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+
+    <definition name="tab" template="/WEB-INF/views/layouts/tab-tiles.jsp" >
+        <put-attribute name="header" value="/WEB-INF/views/layouts/header-tab.jsp" />
+        <put-attribute name="content" value="" />
+    </definition>
+
+    <definition name="/*/*/*/*/*.tab" extends="tab">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}/{4}/{5}.jsp" />
+    </definition>
+    <definition name="/*/*/*/*.tab" extends="tab">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}/{4}.jsp" />
+    </definition>
+    <definition name="/*/*/*.tab" extends="tab">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}/{3}.jsp" />
+    </definition>
+    <definition name="/*/*.tab" extends="tab">
+        <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
+    <definition name="/*.tab" extends="tab">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+    <definition name="*.tab" extends="tab">
+        <put-attribute name="content" value="/WEB-INF/views/{1}.jsp" />
+    </definition>
+
+    <definition name="/*/*.error" template="/WEB-INF/views/layouts/error-tiles.jsp">
+        <put-attribute name="content" value="/WEB-INF/views/error/{1}.jsp" />
+    </definition>
+</tiles-definitions>

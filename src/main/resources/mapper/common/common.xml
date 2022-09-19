@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="COMMON">
+    <sql id="orderBy">
+        <choose>
+            <when test="sortColName != null and !''.equals(sortColName)">
+                <choose>
+                    <!-- TRANSACTION -->
+                    <when test="sortColName == 'REQ_USER_NAME'">Z.REQ_USER_NAME</when>
+                    <when test="sortColName == 'REQ_USER_NO'">Z.REQ_USER_NO</when>
+
+
+                    <!-- MANAGER -->
+                    <when test="sortColName == 'MANAGER_ID'">Z.MANAGER_ID</when>
+                    <when test="sortColName == 'MANAGER_NAME'">Z.MANAGER_NAME</when>
+
+
+                    <!-- TRANSACTION && LIMIT BOOK -->
+                    <when test="sortColName == 'TITLE'">Z.TITLE</when>
+                    <when test="sortColName == 'AUTHOR'">Z.AUTHOR</when>
+                </choose>
+                <choose>
+                    <when test="sortOrder == 'DESC'">DESC</when>
+                    <otherwise>ASC</otherwise>
+                </choose>
+            </when>
+            <otherwise>
+                ${default}
+            </otherwise>
+        </choose>
+    </sql>
+
+    <sql id="noLoan">
+        <choose>
+            <when test="no_loan_yn != null and no_loan_yn == 'Y'.toString()">
+                '1', '2', '8', '15', '16'
+            </when>
+            <otherwise>
+                '1', '2', '6', '8', '9', '15', '16'
+            </otherwise>
+        </choose>
+    </sql>
+
+    <sql id="noLoanBudget">
+        <choose>
+            <when test="no_loan_yn != null and no_loan_yn == 'Y'.toString()">
+                '1', '2', '8', '15', '17'
+            </when>
+            <otherwise>
+                '1', '2', '6', '8', '9', '15', '17'
+            </otherwise>
+        </choose>
+    </sql>
+</mapper>

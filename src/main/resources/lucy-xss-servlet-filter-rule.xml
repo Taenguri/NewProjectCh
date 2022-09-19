@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE lucy>
+<config xmlns="http://www.navercorp.com/lucy-xss-servlet">
+    <defenders>
+        <!-- XssPreventer 등록 -->
+        <defender>
+            <name>xssPreventerDefender</name>
+            <class>com.navercorp.lucy.security.xss.servletfilter.defender.XssPreventerDefender
+            </class>
+        </defender>
+
+        <!-- XssSaxFilter 등록 -->
+        <defender>
+            <name>xssSaxFilterDefender</name>
+            <class>com.navercorp.lucy.security.xss.servletfilter.defender.XssSaxFilterDefender
+            </class>
+            <init-param>
+                <param-value>lucy-xss-sax.xml</param-value>
+                <param-value>false</param-value>
+            </init-param>
+        </defender>
+
+        <!-- XssFilter 등록 -->
+        <defender>
+            <name>xssFilterDefender</name>
+            <class>com.navercorp.lucy.security.xss.servletfilter.defender.XssFilterDefender
+            </class>
+            <init-param>
+                <param-value>lucy-xss.xml</param-value>
+                <param-value>false</param-value>
+            </init-param>
+        </defender>
+    </defenders>
+
+    <!-- xssPreventerDefender는 모든 HTML 특수기호를 치환하기 때문에 <url-rule-set> 태그에 케이스별 예외 처리를 설정해야함 -->
+    <default>
+        <defender>xssPreventerDefender</defender>
+    </default>
+
+    <!-- global 필터링 룰 선언 -->
+    <global>
+        <params>
+            <param name="globalParameter" useDefender="false" />
+            <param name="globalPrefixParameter1" usePrefix="true" useDefender="false" />
+            <param name="globalPrefixParameter2" usePrefix="true" />
+            <param name="globalPrefixParameter3" usePrefix="false" useDefender="false" />
+        </params>
+    </global>
+
+    <!-- url 별 필터링 제외 룰 선언 -->
+    <url-rule-set>
+        <!-- xss 필터에서 제외 시킬 때는 아래와 같이 작성합니다. -->
+        <url-rule>
+            <url disable="true">/eval/questionsmng/savequestionstmpt</url>
+        </url-rule>
+        <url-rule>
+            <url disable="true">/eval/submitstatus/savesubmitdata</url>
+        </url-rule>
+        <!--
+            <url-rule>
+                <url disable="true">/MarcEditor/GetExistenceSpecies</url>
+            </url-rule>
+         -->
+    </url-rule-set>
+</config>

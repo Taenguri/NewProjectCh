@@ -1,0 +1,359 @@
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 900;
+	font-display: swap;
+	src: local('Pretendard Black'), url('../font/Pretendard-Black.woff2') format('woff2'), url('../font/Pretendard-Black.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 800;
+	font-display: swap;
+	src: local('Pretendard ExtraBold'), url('../font/Pretendard-ExtraBold.woff2') format('woff2'), url('../font/Pretendard-ExtraBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url('../font/Pretendard-Bold.woff2') format('woff2'), url('../font/Pretendard-Bold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 600;
+	font-display: swap;
+	src: local('Pretendard SemiBold'), url('../font/Pretendard-SemiBold.woff2') format('woff2'), url('../font/Pretendard-SemiBold.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 500;
+	font-display: swap;
+	src: local('Pretendard Medium'), url('../font/Pretendard-Medium.woff2') format('woff2'), url('../font/Pretendard-Medium.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url('../font/Pretendard-Regular.woff2') format('woff2'), url('../font/Pretendard-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 300;
+	font-display: swap;
+	src: local('Pretendard Light'), url('../font/Pretendard-Light.woff2') format('woff2'), url('../font/Pretendard-Light.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 200;
+	font-display: swap;
+	src: local('Pretendard ExtraLight'), url('../font/Pretendard-ExtraLight.woff2') format('woff2'), url('../font/Pretendard-ExtraLight.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Pretendard';
+	font-weight: 100;
+	font-display: swap;
+	src: local('Pretendard Thin'), url('../font/Pretendard-Thin.woff2') format('woff2'), url('../font/Pretendard-Thin.woff') format('woff');
+}
+
+/* ----------------------------------- Common ----------------------------------- */
+html,body {width:100%;}
+html {overflow-y:scroll; box-sizing:border-box;}
+*, *:before, *:after{box-sizing:inherit;}
+*{
+-webkit-text-size-adjust:none;
+/*-webkit-text-size-adjust - auto | none | N% (default auto)*/
+}
+
+body {word-break:break-all;-ms-word-break:break-all; background:#fff;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0; padding:0;}
+article, aside, hgroup, header, footer, figure, figcaption, nav, section { display: block; }
+fieldset,img {border:0px none; vertical-align:top;}
+dl,ul,ol,menu,li {list-style:none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content:''; content:none;}
+button {margin:0; padding:0; border:0; font:inherit; color:inherit; background:transparent; overflow:visible; cursor:pointer; line-height:1; -webkit-tap-highlight-color:rgba(0,0,0,0);}
+body,th,td,input,select,textarea,button {font-size:16px; line-height:25px; font-family: 'Pretendard'; color:#666; word-break:keep-all; font-weight: 400;}
+input, select, textarea, button{vertical-align:middle; }
+a:link,a:active,a:visited{color:#666; text-decoration:none; border:0px;}
+a:hover,a:focus{color:#333; text-decoration:none}
+table {border-collapse:collapse; border-spacing:0; table-layout:fixed; width:100%;}
+address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal;}
+summary, caption, legend, hr {width:0; height:0; overflow: hidden; visibility: hidden; border: none; position:absolute; left:-1000em;}
+caption {width: 1px; height: 1px; margin: -1px; border: none; clip: rect(0,0,0,0); overflow: hidden;}
+
+/* label hidden 처리 */
+.invisible, .hide{overflow:hidden; visibility:hidden; width:0; height:0; font-size:0; line-height:0; position:absolute;}
+label.invisible{*position:absolute;}
+
+/* input */
+input[type="radio"],
+input[type="checkbox"] {width: 18px; height: 18px; vertical-align:middle}
+input[type="radio"] + label,
+input[type="checkbox"] + label { vertical-align: middle;}
+input[type="checkbox"] + label { padding-left:8px}
+input[type="button"] { cursor: pointer;}
+label + select + label{margin-left:10px;}
+textarea.input { height: auto;}
+input[type="checkbox"] + label{cursor: pointer;}
+input[type="text"]{cursor: text;}
+input[type="button"] + input[type="button"]{margin-left:0;}
+input.input_txt{height: 40px; border-radius:5px; border: 1px solid #ddd; box-sizing:border-box; padding-left: 10px;}
+select.select_txt{height: 40px; border-radius:5px; border: 1px solid #ddd; box-sizing:border-box; padding-left: 10px;}
+
+/* placeholder */
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #999;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #999;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(152,152,152,0.8);
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #999;
+}
+
+/* Button */
+.btn {position:relative; overflow:hidden; display:inline-block; margin:0 4px; padding:12px 16px; background:#fff; text-align:center; font-size:15px; letter-spacing:-0.05em; color:#555; line-height:1.1; border-radius: 25px;}
+.btn:hover{background-color:#f5f5f5}
+.btn.bg_primary {background-color:#5F8DFF; border-color:#5F8DFF; color:#fff;}
+.btn.bg_secondery{background-color:#1F325B; border-color:#1F325B; color:#fff;}
+.btn.bg_accent {border-color:#80CAF9;background-color:#80CAF9; color:#fff; }
+.btn.bg_gray {border-color: #999; background-color: #999; color: #fff;}
+.btn.bg_deep { border-color:#333; background-color:#333; color:#fff}
+.btn.size_m {min-width:150px; height:40px;}
+.btn.size_s {min-width:70px; height:32px; line-height:1.2}
+.btn.size_auto {min-width:auto; height:40px; padding:10px; line-height:1.2}
+.btn:first-child {margin-left:0}
+.btn:last-child {margin-right:0}
+.btn.button_block {display:block; width:100%; margin:0}
+.btn[disabled] {color:#666; border-color:#e5e5e5; background:#e5e5e5; cursor:default;}
+.btn[disabled]:hover i {color:inherit}
+.btn[disabled]:hover:before {display:none}
+.btn_area button{width: 70px; height: 35px; border-radius: 35px; text-align: center; line-height: 35px;font-size:16px; padding: 0; margin: 0 2px;}
+.btn_area .btn_edit{background: #5F8DFF; color: #fff; border: 1px solid #5F8DFF;}
+.btn_area .btn_delete{border: 1px solid #5F8DFF; color: #5F8DFF;}
+.btn_area .btn_delete:hover{background: none;}
+
+/* input width */
+.input:hover,
+.input:focus { border-color: #404040;}
+.input02 { width: 2%}
+.input03 { width: 3%}
+.input04 { width: 4%}
+.input05 { width: 5%}
+.input06 { width: 6%}
+.input07 { width: 7%}
+.input08 { width: 8%}
+.input09 { width: 9%}
+.input10 { width: 10%}
+.input15 { width: 15%}
+.input20 { width: 20%}
+.input25 { width: 25%}
+.input30 { width: 30%}
+.input35 { width: 35%}
+.input40 { width: 40%}
+.input45 { width: 45%}
+.input50 { width: 50%}
+.input55 { width: 55%}
+.input60 { width: 60%}
+.input65 { width: 65%}
+.input70 { width: 70%}
+.input75 { width: 75%}
+.input80 { width: 80%}
+.input85 { width: 85%}
+.input86 { width: 86%}
+.input87 { width: 87%}
+.input88 { width: 88%}
+.input89 { width: 89%}
+.input90 { width: 90%}
+.input95 { width: 95%}
+.input98 { width: 98%}
+.input99 { width: 99%}
+
+/* defult width */
+.width02,
+.width03,
+.width04,
+.width05,
+.width06,
+.width07,
+.width08,
+.width09,
+.width10,
+.width15,
+.width20,
+.width25,
+.width30,
+.width35,
+.width40,
+.width45,
+.width50,
+.width55,
+.width60,
+.width65,
+.width70,
+.width75,
+.width80,
+.width85,
+.width86,
+.width87,
+.width88,
+.width89,
+.width90,
+.width95,
+.width98 { position: relative; margin: 0 auto;}
+
+.width02 { width: 2%}
+.width03 { width: 3%}
+.width04 { width: 4%}
+.width05 { width: 5%}
+.width06 { width: 6%}
+.width07 { width: 7%}
+.width08 { width: 8%}
+.width09 { width: 9%}
+.width10 { width: 10%}
+.width15 { width: 15%}
+.width20 { width: 20%}
+.width25 { width: 25%}
+.width30 { width: 30%}
+.width35 { width: 35%}
+.width40 { width: 40%}
+.width45 { width: 45%}
+.width50 { width: 50%}
+.width55 { width: 55%}
+.width60 { width: 60%}
+.width65 { width: 65%}
+.width70 { width: 70%}
+.width75 { width: 75%}
+.width80 { width: 80%}
+.width85 { width: 85%}
+.width86 { width: 86%}
+.width87 { width: 87%}
+.width88 { width: 88%}
+.width89 { width: 89%}
+.width90 { width: 90%}
+.width95 { width: 95%}
+.width98 { width: 98%}
+
+.mt5{margin-top: 5px;}
+.mt10{margin-top:10px;}
+.mt15{margin-top:15px;}
+.mt20{margin-top:20px;}
+.mt25{margin-top:25px;}
+.mt30{margin-top:30px;}
+.mt35{margin-top:35px;}
+.mt40{margin-top:40px;}
+.mt45{margin-top:45px;}
+.mt50{margin-top:50px;}
+.mt55{margin-top:55px;}
+.mt60{margin-top:60px;}
+
+
+/* content common */
+.clfix:after {content: "."; display: block; height:0px; clear: both; visibility: hidden;}
+.clfix {display:inline-block;}
+.clfix {display:block;}
+* html .clfix {height:1%;} /* Hides from IE-mac */
+.clfix {zoom:1;} /*for IE 5.5-7*/
+
+#wrap{width:100%;}
+.center{text-align:center;}
+.hidden{visibility: hidden;}
+
+/* table */
+/* 테이블 기본형태에서 스크롤 생겨야할때 table바깥에 둘러싸는 div */
+.tbl_scroll{width: 100%;  overflow:auto;}
+.tbl_scroll table{width: auto; min-width:100%;}
+
+.table {width:100%; border-top:1px solid #1F325B;}
+.table th {background:#F4F7FE; font-size:16px; color:#222; font-weight:700; text-align:left; padding:15px; border-bottom:1px solid #eaeaea; word-break: break-all;}
+.table td {font-size:16px; color:#666; text-align:left;  padding:10px 15px; background:#fff; border-bottom:1px solid #eaeaea; vertical-align: middle; word-break: break-all;}
+.table td label{color: #666;}
+
+/*td 첫번째 자식요소를 제외한 나머지 td들이 적용됨 */
+.table th:not(:first-child) { border-left: 1px solid #eaeaea; }
+.table td:not(:first-child) { border-left: 1px solid #eaeaea; }
+
+/*rowspan td 마지막 자식요소를 제외한 나머지 td들이 적용됨 */
+.table th:not(:last-child)[rowspan] { border-right: 1px solid #eaeaea;}
+.table td:not(:last-child)[rowspan] { border-right: 1px solid #eaeaea;}
+.table.center th{text-align: center;}
+.table.center td{text-align: center;}
+
+/* 로딩 */
+#loadingWrap { position: fixed; left: 0; top: 0; right: 0; bottom: 0; background:rgba(0,0,0,0.3); z-index: 1000; text-align: center;}
+.loadingInner{position:absolute; left:50%; top:50%; transform: translate(-50%, -50%); width:70%; transition:all .3s;}
+.loadingWrap p { margin-top: 15px; font-weight: 500; font-size: 24px; opacity: .8; color: #fff; letter-spacing: 0;}
+#loading {  display: inline-block; width:100px; height:100px; border:16px solid rgba(255,255,255,0.5); margin-top: 200px;
+  border-radius: 50%; border-top-color: #5F8DFF; animation: spin 1s ease-in-out infinite; -webkit-animation: spin 1s ease-in-out infinite;}
+#loading p { font-size: 24px; font-weight: 600;}
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+/* paging */
+.paging_wrap{text-align:center; box-sizing:border-box;}
+.paging_wrap:before, .paging_wrap:after{box-sizing:inherit;}
+ul.paging{display:inline-block; font-size:0; margin:40px 0 10px 0; }
+ul.paging li{display:inline-block; margin:0 5px; vertical-align:middle; transition:all 0.3s ease-in-out; }
+ul.paging li img{vertical-align:middle; }
+ul.paging li a{display:block; width:25px; height:25px; border:1px solid #ddd;  font-size:11px; color:#888; line-height:25px;  border-radius: 25px; transition:all 0.3s ease-in-out;}
+ul.paging li.page_arrow a{line-height:23px; }
+ul.paging li.on{background:#5F8DFF; border-radius: 25px;}
+ul.paging li.on a{color:#ffffff; border:1px solid #5F8DFF;}
+
+
+@media screen and (min-width: 1025px) and (max-width: 1399px){
+	#wrap{position:relative; width:100%; margin:0 auto; overflow:hidden;}
+	.btn_area button{width: 60px;}
+}
+
+
+/* tab */
+@media (max-width: 1024px) {
+	#wrap{position:relative; width:100%; margin:0 auto; overflow:hidden;}
+	.btn_area button{width: 50px; height: 30px; border-radius: 30px; font-size: 14px; line-height: 28px; margin: 2px;}
+
+}
+
+
+/* mob */
+@media (max-width: 768px) {
+  body,th,td,input,select,textarea,button {font-size:13px; line-height:20px;}
+  /* table */
+	/* 테이블 기본형태에서 스크롤 생겨야할때 table바깥에 둘러싸는 div */
+	.table th { font-size: 14px; padding:13px;}
+	.table td {font-size:13px; padding:8px;}
+	.btn_area{width: 50px; margin: 0 auto;}
+	.btn_area button{display: block;}
+	.btn_area .btn_edit{margin-bottom: 5px;}
+	.btn_area .btn_delete{margin-left:0px;}
+	.btn {padding:12px; font-size:13px; color:#555;border-radius: 25px;}
+
+}
